@@ -1,6 +1,6 @@
-User.destroy_all
-u1 = User.create :email => 'toto@cherry.com', :password => 'chocolate'
-u2 = User.create :email => 'simpsons@homer.com', :password => 'spongebob'
+# User.destroy_all
+# u1 = User.create :email => 'toto@cherry.com', :password => 'chocolate'
+# u2 = User.create :email => 'simpsons@homer.com', :password => 'spongebob'
 
 Product.destroy_all
 p1 = Product.create :title => "Rolls Roys", :description => "Silver Rolls Royce Phantom"
