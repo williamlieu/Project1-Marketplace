@@ -30,7 +30,8 @@ class ProductsController < ApplicationController
     product = Product.find params[:id]
     product.destoy
     redirect_to products_paths
-
+  end
+  
   private
 
    def products_params

@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root :to => "pages#homes"
+  root :to => "pages#home"
   resources :products, :only => [:index, :new, :create, :edit, :update]
 end

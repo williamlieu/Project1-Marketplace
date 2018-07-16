@@ -4,13 +4,12 @@ class ListingsController < ApplicationController
     @listing = Listing.new
   end
 
-  def edit
-    
+  def create
+    listing = @current_user.listings.create listing_params
+    redirect_to root_path
   end
 
-  def show
-  end
-
-  def index
-  end
+  private
+  def listings_params
+    params.require(:listing).permit(:)
 end
