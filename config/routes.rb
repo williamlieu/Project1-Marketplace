@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root :to => "pages#home"
-  resources :products, :only => [:index, :new, :create, :edit, :update]
+  resources :products, :products 
   resources :users
 
   get '/login' => 'session#new' # login form
