@@ -1,6 +1,12 @@
 class ProductsController < ApplicationController
+
+
   def index
-    @products = Product.all
+    # raise "hell"
+    # @products = Product.all.order("created_at DESC")
+    @products = @current_user.products.order("created_at DESC")
+
+
   end
 
   def show
@@ -14,6 +20,9 @@ class ProductsController < ApplicationController
   def update
     product = Product.find params[:id]
     product.update product_params
+    cloudinary = Cloudinary::Uploader.upload( params[ "product" ][ "image" ] )
+    product.image = cloudinary["url"]
+    product.save
     redirect_to product
   end
 
@@ -22,15 +31,21 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.create products_params
-    redirect_to product_path
+    @product = Product.new product_params
+    cloudinary = Cloudinary::Uploader.upload( params[ "product" ][ "image" ] )
+    @product.image = cloudinary["url"]
+    if @product.save
+      redirect_to product_path(@product)
+    else
+      render :new
+    end
   end
 
   def destroy
     product = Product.find params[:id]
-    product.destoy
-    redirect_to products_paths
-  end
+    product.destroy
+    redirect_to products_path
+   end
 
   private
 

@@ -1,4 +1,54 @@
-<h1>All products</h1>
-  <% @products.each do |product| %>
-  <%=  link_to image_tag(product.image, :class => 'thumb'), product %>
-  <% end %>
+  <!-- <% @products.each do |product| %>
+  <h2><%= product.title %></h2>
+  <%=  link_to image_tag(product.image, :class => 'thumb'), product unless product.image.nil? %>
+  <% end %> -->
+
+
+<div class="container">
+  <div class="row">
+      <div class="productitem1">
+      <% @products.each do |p| %>
+    <div class="col-sm-4">
+      <%=  link_to p.title, product_path(p)%>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-sm-4">
+      <div class="productitem2">
+        <img class="productitem2__img" src="ahttp://res.cloudinary.com/do7iltgdc/image/upload/v1531890714/zq3ux8ky62fjcytkcez2.jpg"/>
+        <h2 class="productitem2__title">
+          <a href="">
+            <% @products.each do |p| %>
+        <%=  link_to p.title, product_path(p), class: "productitem2__price"%>
+        <%= p.price %>
+        <% end %>
+            <span class="productitem2__price">
+              $143100.00
+            </span>
+          </a>
+        </h2>
+        <p>
+          Range Rover Supercharger
+        </p>
+      </div>
+
+    </div>
+    <div class="col-sm-4">
+      <div class="productitem3">
+        <img class="productitem3__img" src="ahttp://res.cloudinary.com/do7iltgdc/image/upload/v1531890714/zq3ux8ky62fjcytkcez2.jpg"/>
+        <h2 class="productitem3__title">
+          <a href="">
+            Range Rover
+            <span class="productitem3__price">
+              $143100.00
+            </span>
+          </a>
+        </h2>
+        <p>
+          Range Rover Supercharger
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>

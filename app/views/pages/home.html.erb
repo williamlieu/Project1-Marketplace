@@ -1,4 +1,12 @@
-<h1>Sellme</h1>
+<div class="jumbotron">
+
+<div class="container">
+  <h1>Sell me</h1>
+  <p>The best free local classifieds site to buy and sell your: cars, furniture, clothes, books, games, computers, and electronics!</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a></p>
+</div>
+
+</div>
 
  <% if @current_user.present? %>
    <h1>Welcome back  <%=  @current_user.email %></h1>
@@ -8,7 +16,7 @@
 
 <div >
    <%= link_to product.title, product %>
-   <%= link_to image_tag(product.image), product %>
+   <%= link_to image_tag(product.image), product if product.image.present?%>
 
 </div>
 <% end %>
