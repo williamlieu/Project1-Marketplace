@@ -12,11 +12,25 @@
    <h1>Welcome back  <%=  @current_user.email %></h1>
 
 <% end %>
-<% Product.all.each do |product| %>
 
-<div >
-   <%= link_to product.title, product %>
-   <%= link_to image_tag(product.image), product if product.image.present?%>
-
+<div class="row">
+    <% Product.all.each_with_index do |p, i| %>
+    <div class="col-sm-4">
+      <div class="productitem<%= i+1 %>">
+        <%= image_tag p.image, :class => "productitem#{ i+1 }__img" if p.image.present? %>
+        <h2 class="productitem<%= i+1 %>__title"></h2>
+        <%= link_to p.title, product_path(p), :class => "productitem#{i+1}__price" %>
+        <span class="productitem<%=i+1%>__price"><%=  p.price %></span>
+      </div>
+    </div>
+    <% end %>
 </div>
-<% end %>
+
+
+<footer class="container-fluid text-center">
+  <p>Sell me Copyright</p>
+  <form class="form-inline">Get newsletter:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+</footer>

@@ -2,13 +2,13 @@ class ProductsController < ApplicationController
 
 
   def index
-    # raise "hell"
     # @products = Product.all.order("created_at DESC")
+    if @current_user.present?
     @products = @current_user.products.order("created_at DESC")
-
-
+  else
+    @products = Product.all.order("created_at DESC")
   end
-
+end
   def show
     @product = Product.find params[:id]
   end
@@ -50,6 +50,6 @@ class ProductsController < ApplicationController
   private
 
    def product_params
-     params.require(:product).permit(:title, :description)
+     params.require(:product).permit(:title, :description, :price)
    end
 end

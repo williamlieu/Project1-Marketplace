@@ -1,14 +1,16 @@
 <%= form_for(@product, :html => { :multipart => true }) do |f| %>
 
-  <%= f.label :title  %>
-  <%= f.text_field :title %>
+<%= f.label :title %>
+<%= f.text_field :title %>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+<%= f.label :description %>
+<%= f.text_field :description %>
 
-  <%= f.label :image %>
-  <%= f.file_field :image %>
+<%= f.label :price %>
+<%= f.text_field :price, :value => '$'  %>
 
+<%= f.label :image %>
+<%= f.file_field :image %>
 
-  <%= f.button :update %>
+<%= f.button :update %>
 <% end %>

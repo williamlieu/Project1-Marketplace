@@ -1,24 +1,29 @@
-# README
+# Sell Me
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sell Me is an online marketplace similar developed on Rails framework.
 
 Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+# Library used
 
-* Configuration
+* Boostrap
 
-* Database creation
+# Other Services
 
-* Database initialization
+* Cloudinary.com
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+# Technologies
 
-* Deployment instructions
+*  Ruby Language
 
-* ...
+* Rails framework
+
+* Database Postgres
+
+# Features
+
+
+# Deployment
+* Heroku

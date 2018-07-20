@@ -1,16 +1,18 @@
-<h1><%= @product.title %></h1>
-<%= image_tag @product.image, :alt => @product.title, :class => 'feature' if @product.image.present?%>
+<div class="row">
+<div class="col-sm-4">
+  <div class="productitem1">
+    <%= image_tag @product.image, :class => "productitem1__img" if @product.image.present? %>
+    <h2 class="productitem1__title"></h2>
+    <%= link_to @product.title, product_path(@product), :class => "productitem1__price" %>
+    <span class="productitem1__price"><%=  @product.price %></span>
+  </div>
+</div>
+</div>
 
-<h2><%=  @current_user=%></h2>
-
-
-<ul>
-  <li><%= @product.description %></li>
-</ul>
 
 
 <div class="controls">
   <%= link_to 'Edit', edit_product_path(@product) %>
   <%= link_to 'Delete', product_path(@product), :method => 'delete' ,:data => {:confirm => 'Are you sure you want to delete this product ?'}%>
 
-</div>
+</div
