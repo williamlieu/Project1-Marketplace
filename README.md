@@ -2,7 +2,7 @@
 
 Sell Me is an online marketplace similar developed on Rails framework.
 
-Things you may want to cover:
+We are using different 
 
 
 # Library used
@@ -16,7 +16,7 @@ Things you may want to cover:
 
 # Technologies
 
-*  Ruby Language
+* Ruby Language
 
 * Rails framework
 

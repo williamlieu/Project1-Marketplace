@@ -3,11 +3,11 @@
   <div class="row">
       <% @products.each_with_index do |p, i| %>
       <div class="col-sm-4">
-        <div class="productitem<%= i+1 %>">
+        <div class="productitem1<%= i+1 %>">
           <%= image_tag p.image, :class => "productitem#{ i+1 }__img" if p.image.present? %>
-          <h2 class="productitem<%= i+1 %>__title"></h2>
+          <h2 class="productitem1<%= i+1 %>__title"></h2>
           <%= link_to p.title, product_path(p), :class => "productitem#{i+1}__price" %>
-          <span class="productitem<%=i+1%>__price"><%=  p.price %></span>
+          <span class="productitem1<%=i+1%>__price"><%=  p.price %></span>
         </div>
       </div>
       <% end %>
